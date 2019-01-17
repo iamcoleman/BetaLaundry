@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title>Beta Laundry</title>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAZ6bu9CQS1H2QvrjtdtK-e7ARtsWPNUQk",
+        authDomain: "beta-laundry.firebaseapp.com",
+        databaseURL: "https://beta-laundry.firebaseio.com",
+        projectId: "beta-laundry",
+        storageBucket: "beta-laundry.appspot.com",
+        messagingSenderId: "698471744910"
+      };
+      firebase.initializeApp(config);
+    </script>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but beta-laundry doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
