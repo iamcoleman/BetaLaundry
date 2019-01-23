@@ -14,7 +14,7 @@
         <v-card-text>
           <v-layout row wrap>
             <v-flex xs6 pa-2>
-              <p>Status: {{ leftWasher.open }}</p>
+              <p>Status: {{ leftWasherOpen }}</p>
             </v-flex>
             <v-flex xs6 pa-2>
               <p>Estimated Time Remaining</p>
@@ -36,7 +36,7 @@
         <v-card-text>
           <v-layout row wrap>
             <v-flex xs6 pa-2>
-              <p>Status: {{ rightWasher.open }}</p>
+              <p>Status: {{ rightWasherOpen }}</p>
             </v-flex>
             <v-flex xs6 pa-2>
               <p>Estimated Time Remaining</p>
@@ -58,7 +58,7 @@
         <v-card-text>
           <v-layout row wrap>
             <v-flex xs6 pa-2>
-              <p>Status: {{ leftDryer.open }}</p>
+              <p>Status: {{ leftDryerOpen }}</p>
             </v-flex>
             <v-flex xs6 pa-2>
               <p>Estimated Time Remaining</p>
@@ -80,7 +80,7 @@
         <v-card-text>
           <v-layout row wrap>
             <v-flex xs6 pa-2>
-              <p>Status: {{ rightDryer.open }}</p>
+              <p>Status: {{ rightDryerOpen }}</p>
             </v-flex>
             <v-flex xs6 pa-2>
               <p>Estimated Time Remaining</p>
@@ -98,24 +98,13 @@
 export default {
   data() {
     return {
-      leftWasher: {
-        open: true,
-        timeRemaining: 0.0
-      },
-      rightWasher: {
-        open: true,
-        timeRemaining: 0.0
-      },
-      leftDryer: {
-        open: true,
-        timeRemaining: 0.0
-      },
-      rightDryer: {
-        open: true,
-        timeRemaining: 0.0
-      },
-
-      gotDatabase: null
+      leftWasherOpen: true,
+      
+      rightWasherOpen: true,
+      
+      leftDryerOpen: true,
+      
+      rightDryerOpen: true,
     };
   },
 
@@ -135,7 +124,7 @@ export default {
         snapshot.forEach(function(childSnapshot) {
           var childData = childSnapshot.val();
           // console.log(childData);
-          vueGuy.leftWasher.open = childData;
+          vueGuy.leftWasherOpen = childData;
         });
       });
 
@@ -143,7 +132,7 @@ export default {
         snapshot.forEach(function(childSnapshot) {
           var childData = childSnapshot.val();
           // console.log(childData);
-          vueGuy.rightWasher.open = childData;
+          vueGuy.rightWasherOpen = childData;
         });
       });
 
@@ -151,7 +140,7 @@ export default {
         snapshot.forEach(function(childSnapshot) {
           var childData = childSnapshot.val();
           // console.log(childData);
-          vueGuy.leftDryer.open = childData;
+          vueGuy.leftDryerOpen = childData;
         });
       });
 
@@ -159,7 +148,7 @@ export default {
         snapshot.forEach(function(childSnapshot) {
           var childData = childSnapshot.val();
           // console.log(childData);
-          vueGuy.rightDryer.open = childData;
+          vueGuy.rightDryerOpen = childData;
         });
       });
     }
