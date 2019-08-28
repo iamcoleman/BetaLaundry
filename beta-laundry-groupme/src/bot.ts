@@ -2,6 +2,7 @@ export class Bot {
   static async respond(req: any, res: any) {
     const request = JSON.parse(req.chunks[0]);
 
+    // console logs
     console.log(request);
     console.log(res);
 
